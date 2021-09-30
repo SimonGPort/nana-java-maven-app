@@ -13,7 +13,19 @@ pipeline {
         //         }
         //     }
         // }
+         stage("test") {
+            steps {
+                script {
+                    echo "testing the application..."
+                }
+            }
+        }
         stage("build jar") {
+            when{
+                expression{
+                BRANCH_NAME=='main'
+                }
+            }
             steps {
                 script {
                     echo "building the application..."
@@ -22,6 +34,11 @@ pipeline {
             }
         }
         stage("build image") {
+            when{
+                expression{
+                BRANCH_NAME=='main'
+                }
+            }
             steps {
                 script {
                     echo "building the docker image..."
@@ -34,6 +51,11 @@ pipeline {
             }
         }
         stage("deploy") {
+            when{
+                expression{
+                BRANCH_NAME=='main'
+                }
+            }
             steps {
                 script {
                     echo "deploying the application..."
