@@ -42,6 +42,8 @@ pipeline {
             steps {
                 script {
                   buildImage 'simongport/my-repo:jma-3.0'
+                  dockerLogin()
+                  dockerPush 'simongport/my-repo:jma-3.0'
                     }
                 }
             }
