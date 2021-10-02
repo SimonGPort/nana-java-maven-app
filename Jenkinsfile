@@ -41,7 +41,7 @@ pipeline {
             }
             steps {
                 script {
-                  buildImage()
+                  buildImage 'simongport/my-repo:jma-3.0'
                     }
                 }
             }
