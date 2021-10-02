@@ -38,7 +38,7 @@ pipeline {
             //     expression{
             //     BRANCH_NAME=='main'
             //     }
-            }
+            // }
             steps {
                 script {
                   buildImage 'simongport/my-repo:jma-3.0'
@@ -50,7 +50,7 @@ pipeline {
             //     expression{
             //     BRANCH_NAME=='main'
             //     }
-            }
+            // }
             steps {
                 script {
                     gv.deployApp()
